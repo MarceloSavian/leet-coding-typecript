@@ -9,7 +9,7 @@ class ListNode {
   }
 }
 
-export class LinkedList extends BaseLinkedList {
+export class FindMiddleNodeLL extends BaseLinkedList {
   constructor(value: number) {
     super(value);
   }

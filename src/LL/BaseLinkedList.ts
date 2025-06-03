@@ -25,19 +25,11 @@ export class BaseLinkedList {
   }
 
   getHead() {
-    if (this.head === null) {
-      console.log('Head: null');
-    } else {
-      console.log('Head: ' + this.head.value);
-    }
+    return this.head;
   }
 
   getTail() {
-    if (this.tail === null) {
-      console.log('Tail: null');
-    } else {
-      console.log('Tail: ' + this.tail.value);
-    }
+    return this.tail;
   }
 
   makeEmpty() {
