@@ -10,10 +10,12 @@ class ListNode {
 export class BaseLinkedList {
   head: ListNode | null;
   tail: ListNode | null;
+  length: number;
   constructor(value: number) {
     const newNode = new ListNode(value);
     this.head = newNode;
     this.tail = this.head;
+    this.length = 1;
   }
 
   printList() {
@@ -35,6 +37,7 @@ export class BaseLinkedList {
   makeEmpty() {
     this.head = null;
     this.tail = null;
+    this.length = 0;
   }
 
   push(value: number) {
@@ -46,5 +49,6 @@ export class BaseLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length++;
   }
 }
