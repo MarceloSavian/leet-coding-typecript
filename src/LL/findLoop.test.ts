@@ -1,6 +1,5 @@
 import test, { describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { FindMiddleNodeLL } from './findMiddleNode.js';
 import { FindLoopLL } from './findLoop.js';
 
 describe('hasLoop', () => {
