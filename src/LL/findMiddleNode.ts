@@ -1,13 +1,4 @@
-import { BaseLinkedList } from './BaseLinkedList';
-
-class ListNode {
-  value: number;
-  next: ListNode | null;
-  constructor(value: number) {
-    this.value = value;
-    this.next = null;
-  }
-}
+import { BaseLinkedList, ListNode } from './BaseLinkedList';
 
 export class FindMiddleNodeLL extends BaseLinkedList {
   constructor(value: number) {

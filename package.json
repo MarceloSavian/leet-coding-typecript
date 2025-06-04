@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "tsx --test $(find src -name '*.test.ts')",
+    "test": "tsx --test",
+    "test:all": "tsx --test $(find src -name '*.test.ts')",
     "test:coverage": "npx c8 --reporter=lcov --reporter=text npm test",
+    "test:file": "tsx --test",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ."
   },
