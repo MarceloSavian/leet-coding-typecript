@@ -9,18 +9,6 @@ list1.push(4);
 list1.push(5);
 list1.push(6);
 
-/**
- *  0 -> 1 -> 2 -> 3
- *
- *  1 ->
- *  0 -> 2 -> 3
- *
- *       1 ->
- *  0 -> 2 -> 3
- *
- *  0 -> 2 -> 1 -> 3
- */
-
 const list1Solution = new SwapPairsLL(2);
 list1Solution.push(1);
 list1Solution.push(4);
