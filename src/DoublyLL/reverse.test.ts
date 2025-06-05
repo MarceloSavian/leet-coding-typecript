@@ -1,67 +1,46 @@
 import test, { describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { IsPalindromeDLL } from './isPalindrome';
+import { ReverseDLL } from './reverse';
 
-const list1 = new IsPalindromeDLL(1);
+const list1 = new ReverseDLL(1);
 list1.push(2);
 list1.push(3);
 list1.push(4);
 list1.push(5);
 
-/**
- *      <-   <-   <-   <-   <-   <-
- * null -> 1 -> 2 -> 3 -> 4 -> 5 -> null
- *
- * stores 5.prev
- *
- * 5 points prev to head.prev
- *      <--------5.prev---------
- *      <-   <-   <-   <-   <-
- * null -> 1 -> 2 -> 3 -> 4 -> 5 -> null
- *
- * 5 points next to head.next
- *      <--------5.prev---------
- *      <-   <-   <-   <-   <-
- * null -> 1 -> 2 -> 3 -> 4 -> 5 null
- *              <-----5.next----
- *
- * 1 points next to tail.next
- *      <--------5.prev---------
- *      <-   <-   <-   <-   <-
- * null -> 1 -> 2 -> 3 -> 4 -> 5 -> null
- *      ---------1.next----------->
- *
- * 1 points prev to the stored prev
- *      <--------5.prev---------
- *           ----1.prev--->
- *      <-   <-   <-   <-   <-
- * null -> 1 -> 2 -> 3 -> 4 -> 5 -> null
- *      ---------1.next----------->
- *
- * 4.next points to 1
- * 2.prev points to 2
- *
- */
+const list1Solution = [5, 4, 3, 2, 1];
 
-const list2 = new IsPalindromeDLL(1);
+const list2 = new ReverseDLL(1);
 list2.push(2);
 list2.push(3);
 list2.push(2);
 list2.push(2);
 
-const list3 = new IsPalindromeDLL(1);
+const list2Solution = [2, 2, 3, 2, 1];
+
+const list3 = new ReverseDLL(1);
+
+const list3Solution = [1];
 
 const testCases = [
-  { input: list1, expected: true },
-  { input: list2, expected: false },
-  { input: list3, expected: true },
+  { input: list1, expected: list1Solution },
+  { input: list2, expected: list2Solution },
+  { input: list3, expected: list3Solution },
 ];
 
-describe('isPalindrome', () => {
+describe('reverse', () => {
   for (const { input, expected } of testCases) {
-    test(`should expect the result of palindrome to be ${expected}`, () => {
-      const result = input.isPalindrome();
-      assert.deepEqual(result, expected);
+    test(`should expect to reverse the list`, () => {
+      input.reverse();
+      let a = [];
+      let b = input.head;
+
+      while (b) {
+        a.push(b.value);
+        b = b.next;
+      }
+
+      assert.deepEqual(a, expected);
     });
   }
 });
