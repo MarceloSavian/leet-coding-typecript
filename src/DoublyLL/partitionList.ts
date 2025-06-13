@@ -31,6 +31,9 @@ export class PartitionListDLL extends BaseDoublyLL {
       }
     }
 
+    console.log(pHigher, 'pHigher');
+    console.log(pLower, 'pLower');
+
     if (!pLower.next) {
       this.head = pHigher.next;
       if (pHigher.next) pHigher.next.prev = null;
@@ -38,7 +41,7 @@ export class PartitionListDLL extends BaseDoublyLL {
       pHigher.next = null;
     } else {
       currentPLower.next = pHigher.next;
-      currentPLower.prev = null;
+      pLower.next.prev = null;
       this.head = pLower.next;
       if (pHigher.next) {
         this.tail = currentPHigher;
