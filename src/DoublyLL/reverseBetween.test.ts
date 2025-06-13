@@ -10,7 +10,7 @@ list1.push(4);
 list1.push(5);
 list1.push(6);
 
-const list1Solution = [1, 5, 4, 3, 2, 5];
+const list1Solution = [1, 5, 4, 3, 2, 6];
 
 const list2 = new ReverseBetweenDLL(1);
 list2.push(2);
@@ -28,7 +28,7 @@ list3.push(4);
 list3.push(5);
 list3.push(6);
 
-const list3Solution = [1, 6, 5, 4, 3, 2, 1];
+const list3Solution = [1, 6, 5, 4, 3, 2];
 
 const list4 = new ReverseBetweenDLL(1);
 list4.push(2);
@@ -54,16 +54,16 @@ const list6Solution = [6];
 
 const testCases = [
   { input: list1, expected: list1Solution, startIndex: 1, endIndex: 4 },
-  //   { input: list2, expected: list2Solution, startIndex: 0, endIndex: 4 },
-  //   { input: list3, expected: list3Solution, startIndex: 1, endIndex: 5 },
-  //   { input: list4, expected: list4Solution, startIndex: 0, endIndex: 5 },
-  //   { input: list5, expected: list5Solution, startIndex: 0, endIndex: 7 },
-  //   { input: list6, expected: list6Solution, startIndex: 0, endIndex: 7 },
+  { input: list2, expected: list2Solution, startIndex: 0, endIndex: 4 },
+  { input: list3, expected: list3Solution, startIndex: 1, endIndex: 5 },
+  { input: list4, expected: list4Solution, startIndex: 0, endIndex: 5 },
+  { input: list5, expected: list5Solution, startIndex: 0, endIndex: 7 },
+  { input: list6, expected: list6Solution, startIndex: 0, endIndex: 7 },
 ];
 
 describe('reverse', () => {
   for (const { input, expected, startIndex, endIndex } of testCases) {
-    test(`should expect to reverse the list`, () => {
+    test(`should expect to reverse the list from ${startIndex} to ${endIndex} indexes`, () => {
       input.reverseBetween(startIndex, endIndex);
       let a = [];
       let b = input.head;
